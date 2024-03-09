@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+    <meta charset = "UTF-8">
+    <meta name = 'viewport' content = 'width=device-width, initial - scale = 1.0'>
+    <title>LaptopPrice_Predictor</title>
+    <style>
+        body{
+            font-family: 'Comic Sans MS', cursive;
+            background-color: white;
+            margin: 0;
+            padding: 0;
+        }
+        body :hover{
+            color: #0317ed;
+            background-color: rgb(0, 255, 179);
+        }
+        .container{
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: rgb(0, 255, 255);
+            border-radius: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1{
+            text-align: center;
+            color: black;
+        }
+        form{
+            margin-top: 20px;
+        }
+        label{
+            display: block;
+            margin-bottom: bold;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        select, input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 2px solid gray;
+            border-radius: 20px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #5a68f9;
+            color: white;
+            font-weight: bold;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        input[type="submit"]:hover {
+            background-color: #0317ed;
+        }
+        .output {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+    <div class="container">
+        <h1>Laptop Price Prediction</h1>
+        <form action="/predict" method="post">
+
+            <label for="Brand">Brand:</label>
+            <select id="Brand" name="Brand" required>
+                <option value="HP">HP</option>
+                <option value="Apple">Apple</option>
+                <option value="Lenovo">Lenovo</option>
+                <option value="ASUS">ASUS</option>
+                <option value="DELL">DELL</option>
+                <option value="Acer">Acer</option>
+                <option value="SAMSUNG">SAMSUNG</option>
+                <option value="MSI">MSI</option>
+                <option value="Infinix">Infinix</option>
+                <option value="Ultimus">Ultimus</option>
+                <option value="CHUWI">CHUWI</option>
+                <option value="WINGS">WINGS</option>
+                <option value="ZEBRONICS">ZEBRONICS</option>
+                <option value="Primebook">Primebook</option>
+                <option value="GIGABYTE">GIGABYTE</option>
+                <option value="realme">realme</option>
+                <option value="MICROSOFT">MICROSOFT</option>
+                <option value="LG">LG</option>
+            </select><br>
+    
+            <label for="Processor">Processor:</label>
+            <select id="Processor" name="Processor" required>
+                <option value="Core i3">Core i3</option>
+                <option value="M1">M1</option>
+                <option value="Core i7">Core i7</option>
+                <option value="Core i5">Core i5</option>
+                <option value="Ryzen 5 Hexa Core">Ryzen 5 Hexa Core</option>
+                <option value="Celeron Dual Core">Celeron Dual Core</option>
+                <option value="Ryzen 7 Octa Core">Ryzen 7 Octa Core</option>
+                <option value="Ryzen 5 Quad Core">Ryzen 5 Quad Core</option>
+                <option value="Ryzen 3 Dual Core">Ryzen 3 Dual Core</option>
+                <option value="Ryzen 3 Quad Core">Ryzen 3 Quad Core</option>
+                <option value="M2">M2</option>
+                <option value="Celeron Quad Core">Celeron Quad Core</option>
+                <option value="Athlon Dual Core">Athlon Dual Core</option>
+                <option value="MediaTek Kompanio 1200">MediaTek Kompanio 1200</option>
+                <option value="Ryzen 9 Octa Core">Ryzen 9 Octa Core</option>
+                <option value="MediaTek MT8788">MediaTek MT8788</option>
+                <option value="Ryzen Z1 HexaCore">Ryzen Z1 HexaCore</option>
+                <option value="MediaTek Kompanio 500">MediaTek Kompanio 500</option>
+                <option value="Core i9">Core i9</option>
+                <option value="MediaTek Kompanio 520">MediaTek Kompanio 520</option>
+                <option value="Ryzen Z1 Octa Core">Ryzen Z1 Octa Core</option>
+                <option value="Pentium Silver">Pentium Silver</option>
+                <option value="Ryzen 5">Ryzen 5</option>
+                <option value="M1 Max">M1 Max</option>
+                <option value="M2 Max">M2 Max</option>
+                <option value="M3 Pro">M3 Pro</option>
+                <option value="M1 Pro">M1 Pro</option>
+                <option value="Ryzen 7 Quad Core">Ryzen 7 Quad Core</option>
+                <option value="Ryzen 5 Dual Core">Ryzen 5 Dual Core</option>
+                <option value="Ryzen 9 16 Core">Ryzen 9 16 Core</option>
+            </select><br>
+    
+            <label for="Operating System">Operating System:</label>
+            <select id="Operating System" name="Operating System" required>
+                <option value="Windows 11 Home">Windows 11 Home</option>
+                <option value="Mac OS Big Sur">Mac OS Big Sur</option>
+                <option value="DOS">DOS</option>
+                <option value="Mac OS Monterey">Mac OS Monterey</option>
+                <option value="Chrome">Chrome</option>
+                <option value="Windows 10">Windows 10</option>
+                <option value="Windows 10 Home">Windows 10 Home</option>
+                <option value="Prime OS">Prime OS</option>
+                <option value="Windows 11 Pro">Windows 11 Pro</option>
+                <option value="Ubuntu">Ubuntu</option>
+                <option value="Windows 10 Pro">Windows 10 Pro</option>
+                <option value="macOS Ventura">macOS Ventura</option>
+                <option value="macOS Sonoma">macOS Sonoma</option>
+                <option value="Mac OS Mojave">Mac OS Mojave</option>
+            </select><br>
+    
+            <label for="Storage">Storage:</label>
+            <select id="Storage" name="Storage" required>
+                <option value="512 GB">512 GB</option>
+                <option value="256 GB">256 GB</option>
+                <option value="1 TB">1 TB</option>
+                <option value="2 TB">2 TB</option>
+                <option value="4 TB">4 TB</option>
+                <option value="128 GB">128 GB</option>
+                <option value="64 GB">64 GB</option>
+                <option value="3 TB">3 TB</option>
+                <option value="6 TB">6 TB</option>
+            </select><br>
+
+            <label for="RAM">RAM:</label>
+            <select id="RAM" name="RAM" required>
+                <option value="8 GB">8 GB</option>
+                <option value="16 GB">16 GB</option>
+                <option value="4 GB">4 GB</option>
+                <option value="12 GB">12 GB</option>
+                <option value="32 GB">32 GB</option>
+                <option value="64 GB">64 GB</option>
+                <option value="18 GB">18 GB</option>
+            </select><br>
+
+            <label for="Touch Screen">Touch Screen:</label>
+            <select id="Touch Screen" name="Touch Screen" required>
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+            </select><br>
+    
+            <input type="submit" value="Predict Price">
+        </form>
+        {% if prediction_text %}
+        <div class="output">
+            <h2>{{ prediction_text }}</h2>
+        </div>
+        {% endif %}
+    </div>
+    
+    </body>
+    </html>
+    
+</html>
